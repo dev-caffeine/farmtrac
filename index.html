@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>फार्मट्रॅक ट्रॅक्टर सेवा - चितळी</title>
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      background: url('assets/header-cover.jpg') center/cover no-repeat;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    }
+
+    header h1 {
+      position: relative;
+      font-size: 2rem;
+      z-index: 1;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .service {
+      width: 150px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: scale(1.05);
+    }
+
+    .service img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .service-name {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 2rem;
+      background: white;
+      margin: 1rem auto;
+      max-width: 700px;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .section img {
+      width: 100%;
+      border-radius: 1rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .section h2 {
+      margin-bottom: 1rem;
+      color: #2b2b2b;
+    }
+    
+    .section p {
+        line-height: 1.6;
+    }
+
+    .section a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    .section a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>फार्मट्रॅक ट्रॅक्टर सेवा<br>चितळी गावातील शेतकऱ्यांसाठी</h1>
+  </header>
+
+  <section class="services">
+    <div class="service" onclick="scrollToSection('perni')" data-aos="zoom-in" data-aos-delay="100">
+      <img src="assets/images/perni.png" alt="पेरणी">
+      <div class="service-name">पेरणी</div>
+    </div>
+    <div class="service" onclick="scrollToSection('usfodne')" data-aos="zoom-in" data-aos-delay="200">
+      <img src="assets/images/usfodne.jpg" alt="उस फोडणे">
+      <div class="service-name">उस फोडणे</div>
+    </div>
+    <div class="service" onclick="scrollToSection('nangarne')" data-aos="zoom-in" data-aos-delay="300">
+      <img src="assets/images/nangarne.png" alt="नांगरणे">
+      <div class="service-name">नांगरणे</div>
+    </div>
+    <div class="service" onclick="scrollToSection('rotarne')" data-aos="zoom-in" data-aos-delay="300">
+        <img src="assets/images/rotarne.png" alt="रोटरने">
+        <div class="service-name">रोटरने</div>
+      </div>
+    <div class="service" onclick="scrollToSection('contact')" data-aos="zoom-in" data-aos-delay="400">
+      <img src="assets/images/contact.png" alt="संपर्क">
+      <div class="service-name">संपर्क</div>
+    </div>
+  </section>
+
+  <section class="section" id="perni" data-aos="fade-up">
+    <h2>पेरणी सेवा</h2>
+    <img src="assets/images/perni.png" alt="पेरणी ट्रॅक्टर">
+    <p>आधुनिक पद्धतीने अचूक पेरणी करून उत्पादनात वाढ. अनुभवी चालक व योग्य वेळेवर सेवा मिळवा.</p>
+  </section>
+
+  <section class="section" id="usfodne" data-aos="fade-up">
+    <h2>उस फोडणे</h2>
+    <img src="assets/images/usfodne.jpg" alt="उस फोडणे">
+    <p>गव्हाण तयार करण्यासाठी दर्जेदार उस फोडणी सेवा. योग्य खोली व गतीने काम पूर्ण केले जाते.</p>
+  </section>
+
+  <section class="section" id="nangarne" data-aos="fade-up">
+    <h2>नांगरणे</h2>
+    <img src="assets/images/nangarne.png" alt="नांगर">
+    <p>माती उलथवून शेत तयार करण्यासाठी शक्तिशाली ट्रॅक्टरद्वारे नांगरणी सेवा. वेळेत कामाची हमी.</p>
+  </section>
+
+  <section class="section" id="rotarne" data-aos="fade-up">
+    <h2>रोटरने</h2>
+    <img src="assets/images/rotarne.png" alt="rotavator">
+    <p>माती भुसभुशीत करणे व ढेकाळ फोडण्यास उत्तम . वेळेत कामाची हमी.</p>
+  </section>
+
+  <section class="section" id="contact" data-aos="fade-up">
+    <h2>संपर्क</h2>
+    <p><strong>मालक:</strong> महानामा वाघमारे</p>
+    <p><strong>📞 मोबाईल:</strong> <a href="tel:7249376620">7249376620</a></p>
+    <p><strong>पत्ता:</strong> मुक्काम पोस्ट चितळी, तालुका: खटाव, जिल्हा: सातारा</p>
+  </section>
+
+  <footer>
+    <p>तुमचा विश्वास, आमची हमी!</p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Animation duration
+      once: true,    // Animate only once
+    });
+  </script>
+
+</body>
+</html>
