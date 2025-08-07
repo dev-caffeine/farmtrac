@@ -8,9 +8,16 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
+    /* -- Color & Font Variables -- */
+    :root {
+      --primary-color: #2E7D32; /* A deep, earthy green */
+      --text-dark: #2b2b2b;
+      --font-family: 'Segoe UI', sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: var(--font-family);
       scroll-behavior: smooth;
       background-color: #f5f5f5;
     }
@@ -34,14 +41,15 @@
       position: relative;
       font-size: 2rem;
       z-index: 1;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     .services {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
     }
 
     .service {
@@ -61,40 +69,55 @@
       object-fit: contain;
       border-radius: 50%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border: 4px solid #fff; /* Initial border */
+      transition: border-color 0.3s ease;
+    }
+
+    .service:hover img {
+        border-color: var(--primary-color); /* Green border on hover */
     }
 
     .service-name {
       margin-top: 0.5rem;
       font-weight: bold;
+      color: var(--text-dark);
+      transition: color 0.3s ease;
+    }
+
+    .service:hover .service-name {
+      color: var(--primary-color); /* Green text on hover */
     }
 
     .section {
       padding: 2rem;
       background: white;
-      margin: 1rem auto;
+      margin: 1.5rem auto;
       max-width: 700px;
       border-radius: 1rem;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      border-top: 5px solid var(--primary-color); /* Green top border for sections */
     }
 
     .section img {
       width: 100%;
       border-radius: 1rem;
-      backdrop-filter: blur(2px);
     }
 
     .section h2 {
       margin-bottom: 1rem;
-      color: #2b2b2b;
+      color: var(--primary-color); /* Green headings */
+      text-align: center;
     }
     
     .section p {
-        line-height: 1.6;
+        line-height: 1.7;
+        color: #555;
     }
 
     .section a {
-        color: #007bff;
+        color: var(--primary-color); /* Green links */
         text-decoration: none;
+        font-weight: 600;
     }
     
     .section a:hover {
@@ -103,8 +126,8 @@
 
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background-color: #333;
+      padding: 2rem;
+      background-color: var(--primary-color); /* Green footer */
       color: white;
       margin-top: 2rem;
       font-size: 1.1rem;
@@ -114,7 +137,7 @@
 <body>
 
   <header>
-    <h1>फार्मट्रॅक ट्रॅक्टर सेवा<br>चितळी गावातील शेतकऱ्यांसाठी</h1>
+    <h1>फार्मट्रॅक ट्रॅक्टर सेवा<br>चितळी पंचक्रोशीतील शेतकऱ्यांसाठी</h1>
   </header>
 
   <section class="services">
@@ -130,11 +153,11 @@
       <img src="assets/images/nangarne.png" alt="नांगरणे">
       <div class="service-name">नांगरणे</div>
     </div>
-    <div class="service" onclick="scrollToSection('rotarne')" data-aos="zoom-in" data-aos-delay="300">
+    <div class="service" onclick="scrollToSection('rotarne')" data-aos="zoom-in" data-aos-delay="400">
         <img src="assets/images/rotarne.png" alt="रोटरने">
         <div class="service-name">रोटरने</div>
       </div>
-    <div class="service" onclick="scrollToSection('contact')" data-aos="zoom-in" data-aos-delay="400">
+    <div class="service" onclick="scrollToSection('contact')" data-aos="zoom-in" data-aos-delay="500">
       <img src="assets/images/contact.png" alt="संपर्क">
       <div class="service-name">संपर्क</div>
     </div>
@@ -161,14 +184,21 @@
   <section class="section" id="rotarne" data-aos="fade-up">
     <h2>रोटरने</h2>
     <img src="assets/images/rotarne.png" alt="rotavator">
-    <p>माती भुसभुशीत करणे व ढेकाळ फोडण्यास उत्तम . वेळेत कामाची हमी.</p>
+    <p>माती भुसभुशीत करणे व ढेकाळ फोडण्यास उत्तम. वेळेत कामाची हमी.</p>
   </section>
 
   <section class="section" id="contact" data-aos="fade-up">
     <h2>संपर्क</h2>
-    <p><strong>मालक:</strong> महानामा वाघमारे</p>
-    <p><strong>📞 मोबाईल:</strong> <a href="tel:7249376620">7249376620</a></p>
-    <p><strong>पत्ता:</strong> मुक्काम पोस्ट चितळी, तालुका: खटाव, जिल्हा: सातारा</p>
+    <div class="contact-layout">
+      <div class="contact-details">
+        <p><strong>मालक:</strong> महानामा वाघमारे</p>
+        <p><strong>📞 मोबाईल:</strong> <a href="tel:7249376620">7249376620</a></p>
+        <p><strong>पत्ता:</strong> मुक्काम पोस्ट चितळी, तालुका: खटाव, जिल्हा: सातारा</p>
+      </div>
+      <div class="contact-photo">
+        <img src="assets/images/mahanama.jpg" alt="मालक: महानामा वाघमारे">
+      </div>
+    </div>
   </section>
 
   <footer>
